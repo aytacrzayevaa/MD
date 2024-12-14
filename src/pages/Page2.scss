@@ -1,0 +1,124 @@
+.page-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: #333;
+  
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 14px;
+  
+      .step {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+  
+        &.active {
+          background-color: rgb(39,118,162);
+          color: #fff;
+          border-color: rgb(39,118,162);
+        }
+      }
+    }
+  
+    .content {
+      .building-type, .floor-selection, .room-count, .repair-type {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+  
+        .label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      }
+  
+      .building-type {
+        .type {
+          padding: 10px;
+          text-align: start;
+          border: 1px solid #ccc;
+          background: none;
+          cursor: pointer;
+          width: 200px;
+  
+          &.active {
+            background-color: rgb(39,118,162);
+            color: #fff;
+          }
+        }
+      }
+  
+      .floor-selection {
+        .dropdowns {
+          display: flex;
+          align-items: center;
+  
+          select {
+            width: 90px;
+            padding-left: 5px;
+            height: 30px;
+            /* padding: 5px 25px; */
+            border: 1px solid #ccc;
+            /* border-radius: 5px; */
+            margin-right: 5px;
+          }
+  
+          span {
+            margin: 0 5px;
+          }
+        }
+      }
+  
+      .room-count {
+        .room {
+          display: block;
+          text-align: start;
+          width: 200px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          background: none;
+        }
+      }
+  
+      .repair-type {
+        select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      }
+  
+      .actions {
+        display: flex;
+        justify-content: start;
+  
+        button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+  
+          &.search {
+            background-color: rgb(39,118,162);
+            color: #fff;
+          }
+  
+          &.reset {
+            background-color: #ededed;
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+  .type.active,
+.room.active {
+  background-color: rgb(39,118,162) !important;
+  color: white;
+}

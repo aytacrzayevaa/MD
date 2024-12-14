@@ -1,0 +1,104 @@
+$selected-color: #4caf50;
+$button-color: #f0f0f0;
+$clear-button-color: #ff4c4c;
+$backspace-button-color: #ffcc00;
+
+.birthdate-input {
+
+  text-align: center;
+  font-family: Arial, sans-serif;
+  width: 75%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+
+  .date-display {
+    font-size: 12px;
+    width: 25%;
+    margin-bottom: 1rem;
+    span {
+      display: inline-block;
+      min-width: 2ch;
+      text-align: center;
+    }
+  }
+
+  .month-selector {
+    margin-bottom: 1rem;
+    width: 35%;
+    p{
+        margin-bottom: 20px;
+      }
+    .months {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      
+      .month-button {
+        width: 25%;
+        background-color: white;
+        border: 1px solid #3394BC;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &.selected {
+          background-color: $selected-color;
+          color: #fff;
+        }
+
+        &:hover {
+          background-color: lighten($button-color, 10%);
+        }
+      }
+    }
+  }
+
+  .year-input {
+    width: 25%;
+    p{
+        margin-bottom: 20px;
+      }
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      justify-content: center;
+
+      .digit-button {
+        background-color: white;
+        border: 1px solid #3394BC;
+        padding: 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: lighten($button-color, 10%);
+        }
+      }
+
+      .clear-button {
+        background-color: $clear-button-color;
+        color: black;
+        font-weight: bold;
+        &:hover {
+          background-color: darken($clear-button-color, 10%);
+        }
+      }
+
+      .backspace-button {
+        background-color: $backspace-button-color;
+        color: black;
+        font-weight: bold;
+        &:hover {
+          background-color: darken($backspace-button-color, 10%);
+        }
+      }
+    }
+  }
+}
