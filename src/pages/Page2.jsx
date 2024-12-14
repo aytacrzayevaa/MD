@@ -4,31 +4,28 @@ import BirthDateCapture from "../components/BirthDateCapture";
 import { Link } from "react-router-dom";
 
 const Page2 = () => {
-  const [selectedBuildings, setSelectedBuildings] = useState([]); // Seçilmiş bina növləri
-  const [selectedRooms, setSelectedRooms] = useState([]); // Seçilmiş otaq sayı
+  const [selectedBuildings, setSelectedBuildings] = useState([]); 
+  const [selectedRooms, setSelectedRooms] = useState([]); 
 
-  // Bina tipini dəyişdirən funksiya
   const toggleBuildingType = (type) => {
     setSelectedBuildings((prev) =>
       prev.includes(type)
-        ? prev.filter((item) => item !== type) // Seçilmişdirsə, çıxar
-        : [...prev, type] // Seçilmiş deyilsə, əlavə et
+        ? prev.filter((item) => item !== type)
+        : [...prev, type] 
     );
   };
 
-  // Mərtəbə seçimlərini qaytaran funksiya
   const getFloorOptions = () => {
-    if (selectedBuildings.length === 0) return []; // Heç bina seçilməyibsə, mərtəbə yoxdur
-    const maxFloor = Math.max(...selectedBuildings); // Seçilmiş bina növlərinin maksimum mərtəbəsini tapırıq
-    return Array.from({ length: maxFloor }, (_, i) => i + 1); // 1-dən `maxFloor`-a qədər mərtəbələri qaytarırıq
+    if (selectedBuildings.length === 0) return []; 
+    const maxFloor = Math.max(...selectedBuildings); 
+    return Array.from({ length: maxFloor }, (_, i) => i + 1);
   };
 
-  // Otaq sayını dəyişdirən funksiya
   const toggleRoomCount = (count) => {
     setSelectedRooms((prev) =>
       prev.includes(count)
-        ? prev.filter((item) => item !== count) // Seçilmişdirsə, çıxar
-        : [...prev, count] // Seçilmiş deyilsə, əlavə et
+        ? prev.filter((item) => item !== count) 
+        : [...prev, count] 
     );
   };
 
@@ -43,7 +40,6 @@ const Page2 = () => {
       <BirthDateCapture />
 
       <div className="content">
-        {/* Bina Tipi */}
         <div className="building-type">
           <span className="label">Bina tipi</span>
           <button
@@ -64,7 +60,6 @@ const Page2 = () => {
           </button>
         </div>
 
-        {/* Mərtəbə Seçimi */}
         <div className="floor-selection">
           <span className="label">Mərtəbə seçimi</span>
           <div className="dropdowns">
@@ -86,7 +81,6 @@ const Page2 = () => {
           </div>
         </div>
 
-        {/* Otaq Sayı */}
         <div className="room-count">
           <span className="label">Otaq sayı</span>
           {[1, 2, 3, 4].map((count) => (
@@ -100,7 +94,6 @@ const Page2 = () => {
           ))}
         </div>
 
-        {/* Əməliyyatlar */}
         <div className="actions">
           <button className="search">Axtar</button>
           <Link to='/'>

@@ -17,27 +17,29 @@ const Page1 = () => {
 
   return (
     <div className="page-container">
-<BirthDateInput/>
+      <BirthDateInput />
 
       <div className="content">
         <div className="payment-method">
-        <label>Ödəniş üsulu</label>
-          <div className="aa"><button
-            className={`method ${
-              selectedMethod === "öz-vəsait" ? "selected" : ""
-            }`}
-            onClick={() => handleMethodClick("öz-vəsait")}
-          >
-            Öz vəsaiti hesabına
-          </button>
-          <button
-            className={`method ${
-              selectedMethod === "ipoteka" ? "selected" : ""
-            }`}
-            onClick={() => handleMethodClick("ipoteka")}
-          >
-            İpoteka krediti hesabına
-          </button></div>
+          <label>Ödəniş üsulu</label>
+          <div className="aa">
+            <button
+              className={`method ${
+                selectedMethod === "öz-vəsait" ? "selected" : ""
+              }`}
+              onClick={() => handleMethodClick("öz-vəsait")}
+            >
+              Öz vəsaiti hesabına
+            </button>
+            <button
+              className={`method ${
+                selectedMethod === "ipoteka" ? "selected" : ""
+              }`}
+              onClick={() => handleMethodClick("ipoteka")}
+            >
+              İpoteka krediti hesabına
+            </button>
+          </div>
         </div>
 
         <div className="info-box">
@@ -50,10 +52,10 @@ const Page1 = () => {
         </div>
 
         <div className="selection-method">
-            <span className="label">Mənzil seçimi 
-                <span className="label"> üsulu 
-                </span> 
-                </span> 
+          <span className="label">
+            Mənzil seçimi
+            <span className="label"> üsulu</span>
+          </span>
           <div className="buttons">
             <button
               className={`method ${
